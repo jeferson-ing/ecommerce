@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header bg-success text-white">
+    <center><h2>Productos</h2></center>
+  </div>
+
+  <div class="card-body">
+    <% if current_user.nil? %>
+      <%= render 'index_no_user'%>
+    <% else %>
+      <%= render 'index_user' %>
+    <% end %>
+  </div>
+
+  <div class="card-fotter">
+
+  </div>
+</div>

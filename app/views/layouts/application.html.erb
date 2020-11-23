@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <%= favicon_link_tag asset_path('logo.png'), :rel => 'icon', :type => 'image/png' %>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is a page for eccomerce">
+    <meta name="author" content="luiscarlosgarcialucho@gmail.com">
+    <title>eCommerce</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="body">
+    <div class="wrapper">
+      <%= render "layouts/top_var" %>
+    </div>
+
+    <main class="bd-content p-5">
+      <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav">
+          <!-- Dashboard redirect_to users -->
+          <li class="nav-item active">
+            <% link_to  users_path, class: "nav-link" do %>
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+            <% end %>
+          </li>
+          <!-- Starts orders -->
+          <li class="nav-item dropdown">
+
+            <div class="dropdown-menu" aria-labelledby="pagesDropdown" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(5px, 56px, 0px);">
+              <h6 class="dropdown-header">Orders</h6>
+
+            </div>
+          </li>
+
+        </ul>
+
+        <div id="content-wrapper">
+          <div class="container-fluid">
+            <div class="col-md-12 text-center">
+            </div>
+
+            <div class="col-md-12">
+              <!-- Here renders rails -->
+              <%= yield %>
+              <!-- DataTables Example -->
+            </div>
+
+          </div>
+          <!-- /.container-fluid -->
+
+          <!-- Sticky Footer -->
+          <!-- Footer -->
+        </div>
+        <!-- /.content-wrapper -->
+
+      </div>
+      <!-- /#wrapper -->
+
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+
+    </main>
+
+    <footer class="bd-footer text-muted bg-dark">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center text-white py-3">© 2020 Copyright:
+        <a href="http://www.unilibre.edu.co/" target="_blank">Universidad Libre</a>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+  </body>
+
+  <script type="text/javascript">
+    (function($) {
+      "use strict";
+
+      // Add active state to sidbar nav links
+      var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
+      $("#layoutSidenav_nav .sb-sidenav a.nav-link").each(function() {
+        if (this.href === path) {
+          $(this).addClass("active");
+        }
+      });
+
+      // Toggle the side navigation
+      $("#sidebarToggle").on("click", function(e) {
+        e.preventDefault();
+        $("body").toggleClass("sb-sidenav-toggled");
+      });
+    })(jQuery);
+  </script>
+</html>

@@ -1,0 +1,16 @@
+<% if resource.errors.any? %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h2>
+      <%= resource.errors.count %> Errores
+      El usuario no puedo ser guardado
+    </h2>
+
+    <% resource.errors.full_messages.each do |message| %>
+      <p id="alert"><%= message %></p>
+
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+nav {
+  position: fixed;
+  background-color: #009688;
+  color: blue;
+  width: 100%;
+}
+
+footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #C0C0C0;
+}
+
+.form_img {
+  border: 1px solid #A7D5DC;
+  min-width: 325px;
+  max-width: 350px;
+  min-height: 325px;
+  max-height: 350px;
+}
+
+.image_principal_page {
+  max-width: 500px;
+  max-height: 500px;
+}

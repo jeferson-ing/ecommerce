@@ -1,0 +1,37 @@
+
+
+<p id="notice"><%= notice %></p>
+<div class="card">
+<h1>Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Client</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.user_id %></td>
+        <td><%= product.client_id %></td>
+        <td><%= product.price %></td>
+        <td><%= product.description %></td>
+        <td><%= image_tag product.image, class: "small_image" %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+  <button type="button" class="btn btn-primary"><a style="color:#FFFFFF" <%= link_to 'New Product', new_product_path %></button>
+</div>
